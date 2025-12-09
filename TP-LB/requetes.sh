@@ -5,7 +5,7 @@ for i in {1..500}
 do
     res=$(curl -s http://localhost:83)
 
-    if echo "$res" | grep -q "Hello 1"; then
+    if [  "$res" = "<h1>Hello 1</h1>" ] ; then
         count1=$((count1+1))
     elif echo "$res" | grep -q "Hello 2"; then
         count2=$((count2+1))
